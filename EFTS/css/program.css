@@ -1,0 +1,217 @@
+.our-prog-main{
+    margin: 0px;
+    color: white;
+}
+
+.our-prog-block-1{
+    padding:5% 0%;
+    margin: 0px;
+    background-color: #004A55;
+    text-align: center;
+    background-size: cover
+}
+
+.our-prog-block-1 h6{
+    background-color: #00a97e;
+    padding: 5px 5%;
+}
+
+.our-prog-block-1-cont p{
+    margin: 30px;
+    padding: 0% 5%;
+    background-color: transparent;
+    text-align: justify;
+    text-align-last: center;
+}
+
+
+.our-prog-block-2{
+    margin: 5%;
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 1%;
+}
+
+.our-prog-block-2-item{
+    display: inline-block;
+    width: 22%;
+    margin: 1%;
+    vertical-align: top;
+    min-height: 220px;
+    box-shadow: -7px 12px 9px 0px black;   
+    padding: 4% 0.5%;
+    background-color: #b71c1c;
+    border-radius: 10px;
+}
+
+.our-prog-block-2-item:hover{
+    background-color: #00343C;
+    box-shadow: inset -3px 6px 20px 1px black, -3px 6px 20px 1px black;
+    cursor: pointer;
+}
+
+.our-prog-disp-div{
+    z-index: 5;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.our-prog-disp-block{
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: column; /* Safari 6.1+ */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+    width: 80%;
+    height: 85%;
+    left: 10%;
+    top: 7.5%;
+    background-color: white;
+    z-index: inherit;
+    padding: 1%;
+    border-radius: 10px;
+    color: black;
+}
+
+.our-prog-disp-title{
+    height: 80px;
+    padding: 0% 1%;
+}
+
+.our-prog-disp-desc{
+    border: 1px solid #9E9E9E;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    padding: 2%;
+    font-size: 1.7rem;
+    text-align: left;
+    max-height: 300px;
+    min-height: 300px;
+    margin: 10px 10px 5% 10px;
+    overflow: scroll;   
+}
+
+.our-prog-disp-button{
+    padding: 0% 5%;
+    width: 11%;
+    text-align: center;
+    height: 40px;
+}
+
+.our-prog-disp-desc::-webkit-scrollbar-thumb{
+    background-color: #b71c1c;
+}
+
+@media only screen and (max-width: 709px){
+    
+    .our-prog-block-2-item{
+        width: 100%;
+        margin: 2% 0%;
+        min-height: 100px;
+    }
+
+    .our-prog-disp-button{
+        padding: 0% 5%;
+        width: 50%;
+        text-align: center;
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 710px) and (max-width: 768px){
+
+    .our-prog-block-2-item{
+        display: inline-block;
+        position: relative;
+        width: 45%;
+        margin: 2% 2%;
+        min-height: 180px;
+    }
+
+    .our-prog-disp-block h6{
+        padding: 2%;
+    }
+
+    .our-prog-disp-desc{
+        max-height: 300px;
+        min-height: 300px;
+    }
+
+    .our-prog-disp-button{
+        padding: 0% 5%;
+        width: 50%;
+        text-align: center;
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px){
+
+    .our-prog-block-2-item{
+        display: inline-block;
+        position: relative;
+        width: 45%;
+        margin: 2% 2%;
+        min-height: 100px;
+    }
+
+    .our-prog-disp-block h6{
+        padding: 2%;
+    }
+
+    .our-prog-disp-desc{
+        max-height: 290px;
+        min-height: 290px;
+    }
+
+    .our-prog-disp-button{
+        padding: 0% 5%;
+        width: 50%;
+        text-align: center;
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1224px){
+
+    .our-prog-disp-desc{
+        max-height: 250px;
+        min-height: 250px;
+    }
+
+    .our-prog-disp-button{
+        padding: 0% 5%;
+        width: 50%;
+        text-align: center;
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width: 1225px) and (max-width: 1440px){
+
+    .our-prog-disp-desc{
+        max-height: 260px;
+        min-height: 260px;
+    }
+
+    .our-prog-disp-button{
+        padding: 0% 5%;
+        width: 50%;
+        text-align: center;
+        height: 40px;
+    }
+
+}

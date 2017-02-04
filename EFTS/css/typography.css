@@ -1,0 +1,647 @@
+body{
+    font-family: 'font-awe';
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'font-awe';
+  src: url('./font-awesome-4.6.3/fonts/fontawesome-webfont.eot') 
+       format('embedded-opentype'),  url('./font-awesome-4.6.3/fonts/fontawesome-webfont.woff') 
+       format('woff'), url('./font-awesome-4.6.3/fonts/fontawesome-webfont.ttf')  
+       format('truetype'), url('./font-awesome-4.6.3/fonts/fontawesome-webfont.svg') 
+       format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/*HEADER TYPOGRAPH*/
+
+.header-font-block{
+    font-size: 15pt;
+    /*font-weight: bold;*/
+}
+
+.header-font-inline{
+    /*font-weight: bold;*/
+}
+
+@media only screen and (min-width: 525px) and (max-width: 768px){
+    .header-font-block{
+        font-size: 15pt;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1240px){
+    .header-font-inline{
+        font-size: 2.1vw;
+    }
+}
+
+@media only screen and (min-width: 1241px) and (max-width: 1440px){
+    .header-font-inline{
+        font-size: 1.7vw;
+    }
+}
+
+@media only screen and (min-width: 1441px){
+    .header-font-inline{
+        font-size: 1.6vw;
+    }
+}
+
+/*HOME FONT*/
+
+.home-top-font-block h1{
+    font-size: 30pt ;
+}
+
+.home-top-font-block h4{
+    font-size: 20pt;
+}
+
+.home-top-font-block h6{
+    font-size: 24pt;
+}
+
+.home-top-font-block h5{
+    font-size: 18pt;
+}
+
+.home-mid-font-head h1{
+    font-size: 32pt;
+}
+
+.home-mid-font-desc p{
+    font-size: 15pt;
+}
+
+@media only screen and (max-width: 425px){
+    .home-top-font-block h1{
+        font-size: 27pt ;
+    }
+
+    .home-top-font-block h4{
+        font-size: 18pt;
+    }
+
+    .home-top-font-block h6{
+        font-size: 18pt;
+    }
+
+    .home-top-font-block h5{
+        font-size: 16pt;
+    }
+
+    .home-mid-font-head h1{
+        font-size: 23pt;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 13pt;
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px){
+    .home-top-font-block h1{
+        font-size: 32pt ;
+    }
+
+    .home-top-font-block h4{
+        font-size: 22pt;
+    }
+
+    .home-top-font-block h6{
+        font-size: 18pt;
+    }
+
+    .home-top-font-block h5{
+        font-size: 20pt;
+    }
+
+    .home-mid-font-head h1{
+        font-size: 30pt;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 13pt;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    .home-top-font-block h1{
+        font-size: 35pt ;
+    }
+
+    .home-top-font-block h4{
+        font-size: 25pt;
+    }
+
+    .home-top-font-block h6{
+        font-size: 24pt;
+    }
+
+    .home-top-font-block h5{
+        font-size: 18pt;
+    }
+
+    .home-mid-font-head h1{
+        font-size: 30pt;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 14pt;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1340px){
+    .home-top-font-block h1{
+        font-size: 30pt ;
+    }
+
+    .home-top-font-block h4{
+        font-size: 20pt;
+    }
+
+    .home-top-font-block h6{
+        font-size: 28pt;
+    }
+
+    .home-top-font-block h5{
+        font-size: 18pt;
+    }
+
+    .home-mid-font-head h1{
+        font-size: 31pt;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 15pt;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media only screen and (max-width: 395px){
+    .home-top-font-block h1{
+        font-size: 7vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 5vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 6vw;
+    }
+
+   .home-top-font-block h5{
+        font-size: 5vw;
+    }
+     
+    .home-mid-font-head h1{
+        font-size: 8vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 5vw;
+        line-height: 6.5vw;
+    }
+
+}
+
+@media only screen and (min-width: 396px) and (max-width: 525px) {
+    .home-top-font-block h1{
+        font-size: 6.6vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 5vw;
+    }
+ 
+    .home-top-font-block h6{
+        font-size: 5vw;
+    }
+
+   .home-top-font-block h5{
+        font-size: 4.5vw;
+    }
+    
+    .home-mid-font-head h1{
+        font-size: 7.7vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 4.9vw;
+        line-height: 6vw;
+    }
+
+}
+
+@media only screen and (min-width: 526px) and (max-width: 583px) {
+    .home-top-font-block h1{
+        font-size: 6.4vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 4.8vw;
+    }
+
+   .home-top-font-block h5{
+        font-size: 4.4vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 7vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 4.8vw;
+        line-height: 6vw;
+    }
+}
+
+@media only screen and (min-width: 584px) and (max-width: 623px) {
+    .home-top-font-block h1{
+        font-size: 6.4vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 4.5vw;
+    }
+
+   .home-top-font-block h5{
+        font-size: 4.4vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 6.95vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 4.6vw;
+        line-height: 5.5vw;
+    }
+}
+
+@media only screen and (min-width: 624px) and (max-width: 673px) {
+    .home-top-font-block h1{
+        font-size: 6.4vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 4.2vw;
+    }
+
+   .home-top-font-block h5{
+        font-size: 4vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 6.87vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 3.8vw;
+        line-height: 5vw;
+    }
+}
+
+@media only screen and (min-width: 674px) and (max-width: 710px) {
+    .home-top-font-block h1{
+        font-size: 6.4vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 4vw;
+    }
+ 
+    .home-top-font-block h5{
+        font-size: 3.8vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 6.8vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 3.5vw;
+        line-height: 4.8vw;
+    }
+}
+
+@media only screen and (min-width: 711px) and (max-width: 768px) {
+    .home-top-font-block h1{
+        font-size: 6.4vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 3.8vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 3.5vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 6.5vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 3.2vw;
+        line-height: 4.5vw;
+    }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 833px) {
+    .home-top-font-block h1{
+        font-size: 5vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 3.6vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 3.3vw;
+    }
+
+    .home-mid-font-head h1{
+        font-size: 5vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 3vw;
+        line-height: 4.2vw;
+    }
+
+}
+
+@media only screen and (min-width: 834px) and (max-width: 861px) {
+    .home-top-font-block h1{
+        font-size: 5vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 3.4vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 3.1vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 5vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 2.7vw;
+        line-height: 3.9vw;
+    }
+
+}
+
+@media only screen and (min-width: 862px) and (max-width: 873px) {
+    .home-top-font-block h1{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 3.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 3.2vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 3vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 4.8vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 2.5vw;
+        line-height: 3.6vw;
+    }
+}
+
+@media only screen and (min-width: 874px) and (max-width: 900px) {
+    .home-top-font-block h1{
+        font-size: 4.8vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 3.8vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 3vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 2.9vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 4.8vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 2.2vw;
+        line-height: 3.3vw;
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 995px) {
+    .home-top-font-block h1{
+        font-size: 4.3vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 3.5vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 2.8vw;
+    }
+  
+    .home-top-font-block h5{
+        font-size: 2.9vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 4.6vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 1.9vw;
+        line-height: 3.1vw;
+    }
+
+}
+
+@media only screen and (min-width: 996px) and (max-width: 1024px) {
+    .home-top-font-block h1{
+        font-size: 4.3vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 3.5vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 2.6vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 2.5vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 4.5vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 1.9vw;
+        line-height: 3vw;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1224px) {
+    .home-top-font-block h1{
+        font-size: 4.3vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 3.3vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 2.4vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 2.35vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 4.3vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 1.9vw;
+        line-height: 3vw;
+    }
+}
+
+@media only screen and (min-width: 1225px) and (max-width: 1324px) {
+    .home-top-font-block h1{
+        font-size: 4.3vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 3.3vw;
+    }
+
+    .home-top-font-block h6{
+        font-size: 2.2vw;
+    }
+
+    .home-top-font-block h5{
+        font-size: 2vw;
+    }
+ 
+    .home-mid-font-head h1{
+        font-size: 4vw;
+    }
+
+    .home-mid-font-desc p{
+        font-size: 1.9vw;
+        line-height: 3vw;
+    }
+}*/
+
+/*@media screen and (min-width: 1441px){
+    .home-top-font-block h1{
+        font-size: 5vw;
+    }
+
+    .home-top-font-block h4{
+        font-size: 4vw;
+    }
+
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

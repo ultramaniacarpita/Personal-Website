@@ -1,0 +1,110 @@
+
+.gallery-main{
+    background-color: #00a97e;
+    padding: 5% 0%;
+}
+
+.gallery-main h1{
+    background-color: #004A55;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.gallery-row{
+    text-align: center;
+    color: white;
+    padding: 0% 5%;
+}
+
+.gallery-box{
+    background-color: #004A55;
+    width: 30%;
+    min-height: 350px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 2% 1%;
+    box-shadow: -1px 14px 18px black, -1px 8px 19px black;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 3px solid white;
+}
+
+.gallery-box:hover{
+    background-color: #FFFACD;
+    color: black;
+    box-shadow: none;
+    border: 1px solid black;
+}
+
+
+.gallery-img{
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 0px 0px;
+    background-size: cover;
+}
+
+.gallery-title h4{
+    padding: 0px 5px;
+    font-size: 15pt;
+    font-family: 'Merriweather', serif;
+}
+
+.gallery-desc{
+    width: 100%;
+    min-height: 300px;
+    text-align: center;
+    padding: 5% 10%;
+    color: black;
+}
+
+.gallery-desc div{
+    vertical-align: middle;
+    margin: 5%;
+    padding: 10% 0%;
+}
+
+
+@media screen and (max-width: 768px){
+    .gallery-box{
+        width: 100%;
+        min-height: 200px;
+    }   
+    
+    .gallery-title h4{
+        font-size: 16pt;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 850px){
+    .gallery-box{
+        width: 47%;
+        min-height: 350px;
+    }   
+}
+
+@media screen and (min-width: 851px) and (max-width: 1030px){
+    .gallery-box{
+        width: 45%;
+        min-height: 350px;
+    }   
+}
+
+
+@media screen and (min-width: 1031px) and (max-width: 1124px){
+    .gallery-box{
+        width: 31%;
+        min-height: 350px;
+    }   
+}
+
+
+
+
+
+
