@@ -8,28 +8,17 @@ $title-font: 16pt;
 $para-font: 13pt;
 $main-pg-pad: 15px 50px;
 $foot-head-pad: 5px 50px;
-$sec-top-margin: 50px;
+$sec-top-margin: 35px;
+
 $mob-pad : 15px 10px;
+$mob-title-font: 30px;
 
 $break-small: 320px;
-$break-medium: 768px;
+$break-sm: 500px;
+$break-medium: 720px;
+$break-ml: 900px;
 $break-large: 1024px;
-
-body{
-    box-sizing: border-box;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    letter-spacing: 1px;
-    height:  100%;
-
-    p{
-        letter-spacing: normal;
-        font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-    }
-}
-
-html{
-    height: 100%;
-}
+$break-x-large: 1300px;
 
 @mixin respond-to($media){
     @if $media == small-screen{
@@ -37,13 +26,28 @@ html{
             @content;
         }
     }
+    @else if $media == sm-screen{
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-sm){
+            @content;
+        }
+    }
     @else if $media == medium-screen{
-        @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium){
+        @media only screen and (min-width: $break-sm + 1) and (max-width: $break-medium){
+            @content;
+        }
+    }
+    @else if $media == ml-screen{
+        @media only screen and (min-width: $break-medium + 1) and (max-width: $break-ml){
             @content;
         }
     }
     @else if $media == large-screen{
-        @media only screen and (min-width: $break-medium + 1) and (max-width: $break-large){
+        @media only screen and (min-width: $break-ml + 1) and (max-width: $break-large){
+            @content;
+        }
+    }
+    @else if $media == x-large-screen{
+        @media only screen and (min-width: $break-large + 1) and (max-width: $break-x-large){
             @content;
         }
     }
@@ -70,8 +74,45 @@ html{
     display: inline-block;
 }
 
+body{
+    box-sizing: border-box;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    letter-spacing: 1px;
+    height:  100%;
+
+    p{
+        letter-spacing: normal;
+        font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    }
+
+    h1{
+        @include respond-to(small-screen){
+            font-size: $mob-title-font;
+        }
+        @include respond-to(sm-screen){
+            font-size: $mob-title-font;
+        }
+
+    }
+
+    h2{
+        @include respond-to(small-screen){
+            font-size: 25px;
+        }
+        @include respond-to(sm-screen){
+            font-size: 25px;
+        }
+
+    }
+}
+
+html{
+    height: 100%;
+}
+
 // Header below 720px
 .header-sec-sm{
+    box-shadow:-1px 0px 8px #cdcdcd;
 
     .header-main-sm{
         text-align: center;
@@ -79,11 +120,16 @@ html{
         min-height: 30px;
         background-color: white;
         width: 100%;
-
+        
         .content-sm{
-
             .menu-logo-sm{
                 width: 100px;
+                @include respond-to(sm-screen){
+                    width: 110px;
+                }
+                @include respond-to(medium-screen){
+                    width: 120px;
+                }
             }
         }
 
@@ -95,10 +141,17 @@ html{
 
             .menu-name-sm{
                 width: auto;
-                margin: 0px 0px 0px 10px;
+                margin: 5px 0px 0px 10px;
                 
                 .menu-element-sm{
                     color: $font-color;
+                    @include respond-to(sm-screen){
+                        font-size: 15px;
+                    }
+                    @include respond-to(medium-screen){
+                        font-size: 20px;
+                    }
+
                 }
 
                 .menu-element-act-sm{
@@ -119,6 +172,11 @@ html{
         z-index: 900;
         background-color: transparent;
         text-align: center;
+
+        @include respond-to(medium-screen){
+            left: 90%;
+            width: 10%;
+        }
 
         .top-button-sm, .bot-button-sm{
             border: 1px solid black;
@@ -154,7 +212,7 @@ html{
 
 //header above 720px 
 .header-sec{
-
+    box-shadow:-1px 0px 8px #cdcdcd;
     .header-main{
         @include display-flex();
         width: 100%;
@@ -165,7 +223,7 @@ html{
         padding: $foot-head-pad;
         min-height: 30px;
         background-color: white;
-
+        z-index: 999;
        
         .content{
             @include display-flex();
@@ -210,6 +268,11 @@ html{
         background-color: transparent;
         text-align: center;
 
+        @include respond-to(ml-screen){
+            left: 90%;
+            width: 10%;
+        }
+
         .top-button, .bot-button{
             border: 1px solid black;
             box-shadow: -1px 3px 4px 0px #000000;
@@ -218,6 +281,10 @@ html{
             width: 70%;
             margin: 5% 15%;
             padding: 5px;
+
+            @include respond-to(large-screen){
+                width: 85%;
+            }
         }
 
         .top-button:hover, .bot-button:hover{
@@ -244,7 +311,7 @@ html{
 
 //Landing-page
 .main-page{
-
+    perspective: 1px;
     .top-image{
         height: 650px;
         @include background-img('{{site.baseurl}}./../image/back-image-1.jpg');
@@ -254,47 +321,55 @@ html{
             @include background-img('{{site.baseurl}}./../image/top-image1.jpg');
             height: 300px;
         }
+        @include respond-to(sm-screen){
+            @include background-img('{{site.baseurl}}./../image/top-image1.jpg');
+            height: 400px;
+        }
         @include respond-to(medium-screen){
             @include background-img('{{site.baseurl}}./../image/top-image1.jpg');
             height: 400px;
         }
+        z-index: 10;
     }
 
     .mid-image{
-        height: 650px;
-        @include background-img('{{site.baseurl}}./../image/back-image-2.jpg');
+        height: 500px;
+        @include background-img('{{site.baseurl}}./../image/back-image.jpg');
         background-attachment: fixed;
         background-position: center;
         @include respond-to(small-screen) {
-            @include background-img('{{site.baseurl}}./../image/back-image-2.jpg');
-            height: 200px;
+            @include background-img('{{site.baseurl}}./../image/back-image.jpg');
+            height: 300px;
+        }
+        @include respond-to(sm-screen){
+            @include background-img('{{site.baseurl}}./../image/back-image.jpg');
+            height: 400px;
         }
         @include respond-to(medium-screen){
-            @include background-img('{{site.baseurl}}./../image/back-image-2.jpg');
-            height: 300px;
+            @include background-img('{{site.baseurl}}./../image/back-image.jpg');
+            height: 400px;
         }
     }
   
     .bot-image{
-        height: 650px;
+        height: 500px;
         @include background-img('{{site.baseurl}}./../image/back-image-3.jpg');
         background-attachment: fixed;
         background-position: center;
         @include respond-to(small-screen) {
             @include background-img('{{site.baseurl}}./../image/back-image-3.jpg');
-            height: 200px;
+            height: 300px;
+        }
+        @include respond-to(sm-screen){
+            @include background-img('{{site.baseurl}}./../image/back-image-3.jpg');
+            height: 400px;
         }
         @include respond-to(medium-screen){
             @include background-img('{{site.baseurl}}./../image/back-image-3.jpg');
-            height: 300px;
+            height: 400px;
         }
     }
 
-}
-
-.element-1{
-    border: 1px solid black;
-    // margin: 0% 0% 15% 0%;
 }
 
 //about-page
@@ -302,12 +377,18 @@ html{
 .about-page{
     text-align: center;
     padding: $main-pg-pad;
-    margin-top: $sec-top-margin;
+    margin: $sec-top-margin 0px;
     @include respond-to(small-screen){
         padding: 15px 10px;
+        margin: 0px;
+    }
+    @include respond-to(sm-screen){
+        padding: 15px 10px;
+        margin: 0px;
     }
     @include respond-to(medium-screen){
         padding: 15px 10px;
+        margin: 0px;
     }
 
     .top-sec{
@@ -325,10 +406,34 @@ html{
                 height: 100px;
                 margin: 0% 5%;
             }
-            @include respond-to(medium-screen){
+            @include respond-to(sm-screen){
                 display: inline-block;
                 width: 100px;
                 height: 100px;
+                margin: 0% 5%;
+            }
+            @include respond-to(medium-screen){
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                margin: 0% 5%;
+            }
+            @include respond-to(ml-screen){
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                margin: 0% 5%;
+            }
+            @include respond-to(large-screen){
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                margin: 0% 5%;
+            }
+            @include respond-to(x-large-screen){
+                display: inline-block;
+                width: 200px;
+                height: 200px;
                 margin: 0% 5%;
             }
 
@@ -364,8 +469,12 @@ html{
                 width: 100%;
                 margin: 3% 0%;
             }
+            @include respond-to(sm-screen){
+                width: 100%;
+                margin: 3% 0%;
+            }
             @include respond-to(medium-screen){
-                width: 80%;
+                width: 100%;
                 margin: 3% 0%;
             }
 
@@ -383,19 +492,24 @@ html{
     }
 }
 
-
 //Hire Page section
 
 .work-sec{
     padding: $main-pg-pad;
-    margin-top: $sec-top-margin;
-    background-color: #dce5ee;
     text-align: center;
+    margin: $sec-top-margin 0px;
+
     @include respond-to(small-screen){
         padding: $mob-pad;
+        margin: 0px;
+    }
+    @include respond-to(sm-screen){
+        padding: $mob-pad;
+        margin: 0px;
     }
     @include respond-to(medium-screen){
         padding: $mob-pad;
+        margin: 0px;
     }
 
     .work-row{
@@ -404,7 +518,7 @@ html{
         .work-box{
             padding: 1.5% 4%;
             display: inline-block;
-            border: 2px solid black;
+            box-shadow: 0 0 20px #cdcdcd;
             width: 46%;
             min-height: 200px;
             vertical-align: top;
@@ -413,15 +527,29 @@ html{
             
             @include respond-to(small-screen){
                 width: 100%;
+                margin-bottom: 4%;
+            }
+            @include respond-to(sm-screen){
+                width: 100%;
             }
             @include respond-to(medium-screen){
                 width: 100%;
             }
+            @include respond-to(ml-screen){
+                width: 46%;
+            }
+            @include respond-to(large-screen){
+                width: 46%;
+            }
+
             .proj-img{
                 height: 30px;
                 img{
                     width: 200px;
                     @include respond-to(small-screen){
+                        width: 150px;
+                    }
+                    @include respond-to(ml-screen){
                         width: 150px;
                     }
                     @include respond-to(medium-screen){
@@ -456,7 +584,7 @@ html{
     }
 
     .website{
-        z-index: 999;
+        z-index: 970;
         border: 1px solid black;
         display: block;
         position: fixed;
@@ -464,8 +592,18 @@ html{
         left: 0;
         width: 100%;
         height: 100%;
-        padding: 0% 5% 5% 5%;
+        padding: 7% 5%;
         background-color: rgba(0, 0, 0, 0.8);
+
+        @include respond-to(small-screen){
+            padding: 3% 5%;
+        }
+        @include respond-to(sm-screen){
+            padding:3% 5%;
+        }
+        @include respond-to(medium-screen){
+            padding:3% 5%;
+        }
 
         .close-btn{
             padding: 0;
@@ -487,12 +625,25 @@ html{
  //Email page
 
 .hire-sec{
+    margin: $sec-top-margin;
     padding: $main-pg-pad;
     @include respond-to(small-screen){
         padding: 0;
+        margin: 0px;
+    }
+    @include respond-to(sm-screen){
+        padding: 0;
+        margin: 0px;
     }
     @include respond-to(medium-screen){
         padding: 0;
+        margin: 0px;
+    }
+    @include respond-to(ml-screen){
+        padding: 15px;
+    }
+    @include respond-to(large-screen){
+        padding: 15px;
     }
     
     .hire-page{
@@ -507,12 +658,27 @@ html{
         @include respond-to(small-screen){
             @include flex-dir(column);
             align-items: center;
-            padding: 15px;
+            padding: 10px;
+        }
+        @include respond-to(sm-screen){
+            @include flex-dir(column);
+            align-items: center;
+            padding: 15px;            
         }
         @include respond-to(medium-screen){
             @include flex-dir(column);
             align-items: center;
             padding: 15px;            
+        }
+        @include respond-to(ml-screen){
+            @include flex-dir(row);
+            align-items: baseline;
+            padding: 0px;            
+        }
+        @include respond-to(large-screen){
+            @include flex-dir(row);
+            align-items: baseline;
+            padding: 0px;            
         }
 
         .email-page{    
@@ -520,15 +686,27 @@ html{
             @include respond-to(small-screen){
                 width: 100%;
             }
+            @include respond-to(sm-screen){
+                width: 100%;
+            }
             @include respond-to(medium-screen){
+                width: 100%;
+            }
+            @include respond-to(ml-screen){
+                width: 100%;
+            }
+            @include respond-to(large-screen){
                 width: 100%;
             }
 
             .form-wrapper{
-                border: 1px solid black;
+                box-shadow: 0 0 20px #cdcdcd;
                 border-radius: 10px;
                 padding: $main-pg-pad;
                 @include respond-to(small-screen){
+                    padding: 20px;
+                }
+                @include respond-to(sm-screen){
                     padding: 20px;
                 }
                 @include respond-to(medium-screen){
@@ -536,12 +714,8 @@ html{
                 }
 
                 .form-name{
-                    @include display-flex();
-                    @include flex-dir(row);
-                    justify-content: space-between;
-
                     input[type=text], select{
-                        width: 97%;
+                        width: 98%;
                         padding: 5px;
                         border: 2px solid #ccc;
                         border-radius: 5px;
@@ -569,10 +743,18 @@ html{
                         @include respond-to(small-screen){
                             width: auto;
                         }
+                        @include respond-to(sm-screen){
+                            width: auto;
+                        }
                         @include respond-to(medium-screen){
                             width: auto;
                         }
-
+                        @include respond-to(ml-screen){
+                            width: auto;
+                        }
+                        @include respond-to(large-screen){
+                            width: auto;
+                        }
                     }
 
                     input[type=submit]:hover{
@@ -585,10 +767,17 @@ html{
         }
 
         .contact-page{
-            @include respond-to(large-screen){
+            text-align: left;
 
+
+            .page-title{
+                @include respond-to(small-screen){
+                    text-align: center;
+                }
+                @include respond-to(sm-screen){
+                    text-align: center;
+                }
             }
-            text-align: center;
 
             .page-head{
                 border-left: 2px solid black;
@@ -598,26 +787,108 @@ html{
                     border-left: none;
                     margin: 0;
                 }
+                @include respond-to(sm-screen){
+                    border-left: none;
+                    margin: 0;
+                }
                 @include respond-to(medium-screen){
                     border-left: none;
                     margin: 0;
                 }
-            
+
                 h3{
                     margin-bottom: 50px;
                     @include respond-to(small-screen){
                         font-size: 20px;
                     }
+                    @include respond-to(sm-screen){
+                        font-size: 20px;
+                    }
                     @include respond-to(medium-screen){
                         font-size: 20px;
                     }
+                }
 
+                .page-add{
+                    margin:20px 0px;
                 }
             }
         }
     }
 
 }
+
+//Go-back Dialog-box
+
+.go-back-dialog{
+    z-index: 999;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10% 30%;
+    text-align: center;
+    @include respond-to(small-screen){
+        padding: 40% 5%
+    }
+    @include respond-to(sm-screen){
+        padding: 30% 10%
+    }
+    @include respond-to(medium-screen){
+        padding: 30% 10%
+    }
+
+
+    .dialog-box{
+        padding: 5%;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 0 20px #000000;
+
+        .go-back-btn{
+            border: 1px solid black;
+            background-color: rgba(52,73,94 ,1);
+            color: white;
+            width: 30%;
+            margin: 5% 35%;
+            padding: 10px;
+            @include respond-to(small-screen){
+                width: 60%;
+                margin: 5% 20%;
+            }
+            @include respond-to(sm-screen){
+                width: 60%;
+                margin: 5% 20%;
+            }
+            @include respond-to(medium-screen){
+                width: 60%;
+                margin: 5% 20%;
+            }
+            @include respond-to(ml-screen){
+                width: 50%;
+                margin: 5% 25%;
+            }
+        }
+        .go-back-btn{
+            background-color: black;
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
