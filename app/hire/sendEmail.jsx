@@ -59,10 +59,11 @@ class SendEmail extends React.Component{
 
     renderSentMsg(){
         return(
-            <div>
-                Message has been sent.
-                <div onClick = {this.onMsgSent}>
-                    Go Back
+            <div className = "dialog-box">
+                <h2>Thank you for the message.</h2>
+                    
+                <div onClick = {this.onMsgSent} className="go-back-btn">
+                    <i className="fa fa-long-arrow-left" aria-hidden="true">  Back to page</i>
                 </div>
             </div>
         )
@@ -71,7 +72,11 @@ class SendEmail extends React.Component{
     render(){
         if(this.state.sent == true){
             return(
-                this.renderSentMsg()
+                <section className="go-back-dialog">
+                    {
+                        this.renderSentMsg()
+                    }
+                </section>
             )
         }
         return(
@@ -79,14 +84,8 @@ class SendEmail extends React.Component{
                 <div className="form-wrapper">
                     <div id="msg-form">
                         <div className="form-name">
-                            <div>
-                                <h5>First-Name:</h5> 
-                                <input type="text" name="firstName" placeholder="First-Name" size="25" onChange={this.onName} ></input>
-                            </div>
-                            <div>
-                                <h5>Last-Name:</h5> 
-                                <input type="text" name="lastName" placeholder="Last-Name" size="25"></input> 
-                            </div>
+                            <h5>Full-Name:</h5> 
+                            <input type="text" name="firstName" placeholder="Your-Name" size="60" onChange={this.onName} ></input>
                         </div>
                         <br/>
                         <div className="form-detail">

@@ -6,7 +6,9 @@ class Contact extends React.Component{
     render(){
         return(
             <div className="contact-page">
-                <h1> Contact Info </h1>
+                <div className="page-title">
+                    <h1> Contact Info </h1>
+                </div>
                 <div className="page-head">
                     <h3> 
                         If you want to contact me OR just want to say "HELLO",
