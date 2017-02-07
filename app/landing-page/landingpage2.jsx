@@ -9,7 +9,6 @@ class LandingPage2 extends React.Component{
             <div className="main-page">
                 <Parallax styleClass = "bot-image" mobile = {480} >
                     <div className = "bot-image">
-                        
                     </div>
                 </Parallax>
             </div>
